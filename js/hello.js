@@ -6,7 +6,7 @@ let btn_next = document.querySelector('.buttons #btn_next');
 
 let i = 0;
 btn_next.onclick = function () {
-    img[i].className = "";
+    img[i].className = "hide";
     i++;
     if( i >= img.length){
         i = 0;
@@ -15,7 +15,7 @@ btn_next.onclick = function () {
 };
 
 btn_prev.onclick = function () {
-    img[i].className = "";
+    img[i].className = "hide";
     i--;
     if(i < 0) {
         i = img.length - 1;
