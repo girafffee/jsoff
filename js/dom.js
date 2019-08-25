@@ -39,12 +39,12 @@ insLi = function(){
 		if(clear(prop)) continue;
 		k++;
 		
-		if(k === n){
+		if(k == n){
 			ul.insertBefore(li, prop);
 			break;
 		}
 	}
-	if(k !== n)
+	if(k != n)
 		alert("индекс вышел за границу");	
 	
 };
@@ -58,12 +58,12 @@ delLi = function(){
 		if(clear(prop)) continue;
 		k++;
 		
-		if(k === n){
+		if(k == n){
 			ol.removeChild(prop);
 			break;
 		}
 	}
-	if(k !== n)
+	if(k != n)
 		alert("индекс вышел за границу");
 	
 	
