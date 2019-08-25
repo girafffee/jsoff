@@ -6,10 +6,12 @@ showDOM = function(){
 	
 	out.innerHTML = str;
 	
-}
+};
+
 hideDOM = function(){
 	out.innerHTML = "";
-}
+};
+
 addLi = function(selector){
 	// Добавляем новые элемент списка
 	var v = document.createElement('LI');
@@ -22,7 +24,7 @@ addLi = function(selector){
 	
 	//Вставляем в конец Списка
 	ul.appendChild(v);
-}
+};
 
 insLi = function(){
 	var li = document.createElement('LI');
@@ -37,15 +39,15 @@ insLi = function(){
 		if(clear(prop)) continue;
 		k++;
 		
-		if(k == n){
+		if(k === n){
 			ul.insertBefore(li, prop);
 			break;
 		}
 	}
-	if(k != n)
+	if(k !== n)
 		alert("индекс вышел за границу");	
 	
-}
+};
 
 delLi = function(){
 	var ol = document.querySelector("OL");
@@ -56,23 +58,23 @@ delLi = function(){
 		if(clear(prop)) continue;
 		k++;
 		
-		if(k == n){
+		if(k === n){
 			ol.removeChild(prop);
 			break;
 		}
 	}
-	if(k != n)
+	if(k !== n)
 		alert("индекс вышел за границу");
 	
 	
-}
+};
 
 delALL = function(){
 	var ol = document.querySelector("OL");
 	while(ol.hasChildNodes())
 		ol.removeChild(ol.lastChild);
 	alert("ALL");
-}
+};
 
 cloneUl = function(){
 	var ul = document.querySelector("OL");
@@ -83,25 +85,13 @@ cloneUl = function(){
 	
 	newUl.style.border = "2px solid aqua";
 	newUl.style.minHeight = "20px";
-}
+};
 
-
-moreLi = function(){
-	var li;
-	var ul = document.querySelector("OL");
-	for(let i = 0; i < mrli.value; i++){
-		li[i] = document.createElement('LI');
-		li[i].innerText = "Add new Li = " + i;
-		
-		
-		ul.appendChild(li[i]);
-	}
-}
 
 clear = function(prop){
 	if(prop.nodeName === '#text' || prop.nodeName === '#comment')
 		return true;
-}
+};
 
 getProp = function(prnt){
 	if(!prnt.hasChildNodes()) return "";
@@ -118,7 +108,7 @@ getProp = function(prnt){
 		str += '</ul>';
 		return str;
 	}	
-}
+};
 
 teory = function (){
 	// Создание элемента DOM	
@@ -137,7 +127,7 @@ teory = function (){
 	// Проверка на выборку радио-кнопки
 	// .querySelector("input[type='radio']:checked");
 
-}
+};
 
 
 
