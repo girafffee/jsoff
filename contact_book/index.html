@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CONTACT BOOK</title>
+    <link rel="stylesheet" href="css/stl.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="container-fluid">
+    <div class="container">
+
+        <div class="contact">
+            <form class="contact-form" action="index.html" method="GET">
+                <div class="rows-flex">
+                    <div class="row">
+                        <label>Ваше имя: </label>
+                        <input type="text" name="firstname"/>
+                    </div>
+                    <div class="row">
+                        <label>Телефоны: </label>
+                    </div>
+                    <div class="row tels">
+                        <label for="tel_">Номер: </label><input id="tel_" type="tel" name="tel_"/>
+                        <label for="tel_type_">Тип: </label>
+                        <select id="tel_type_" name="tel_type_">
+                            <option disabled>Выберите тип:</option>
+                            <option value="own" selected>Личный</option>
+                            <option value="home">Домашний</option>
+                            <option value="work">Рабочий</option>
+                            <option value="reserve">Запасной</option>
+                        </select>
+                        <!--<label for="main_1">Основной: </label><input type="radio" id="main_1">-->
+                    </div>
+                </div>
+                <div class="columns-flex">
+                    <input class="col-flex-id" type="button" onclick="addNum()" value="Еще номер">
+                    <input class="col-flex-id" type="submit" value="Сохранить" onclick="setNum()">
+                    <input class="col-flex-id" type="reset"/>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<script src="js/contact.js"></script>
+</body>
+</html>
