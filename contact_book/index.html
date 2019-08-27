@@ -19,8 +19,8 @@
                     </div>
                     <div class="row">
                         <label>Телефоны: </label>
-                    </div>
-                    <div class="row tels">
+                    </div><div class="row tels">
+                        <!--<input class="remove-button" type="button" value="X" id="rm_" />-->
                         <label for="tel_">Номер: </label><input id="tel_" type="tel" name="tel_"/>
                         <label for="tel_type_">Тип: </label>
                         <select id="tel_type_" name="tel_type_">
@@ -31,10 +31,9 @@
                             <option value="reserve">Запасной</option>
                         </select>
                         <!--<label for="main_1">Основной: </label><input type="radio" id="main_1">-->
-                    </div>
-                </div>
+                    </div></div>
                 <div class="columns-flex">
-                    <input class="col-flex-id" type="button" onclick="addNum()" value="Еще номер">
+                    <input class="col-flex-id" type="button" onclick="addTelNum()" value="Еще номер">
                     <input class="col-flex-id" type="submit" value="Сохранить" onclick="setNum()">
                     <input class="col-flex-id" type="reset"/>
                 </div>
