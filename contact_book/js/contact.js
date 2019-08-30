@@ -46,32 +46,40 @@ countRow = function(){
 
 
 addTelNum = function() {
+    // Клонируем первую строчку с номером телефона
+
     let tel_row = document.querySelector('.tels');
     let tel_row_new = tel_row.cloneNode(true);
 
-    // Settings
+    // Необходимые настройки
     //tel_row_new.style.border = "2px solid aqua";
 
-    let parent_row = document.querySelector(".rows-flex");
-
+    // Удаляем введенные значения из поля
     for (let tag of tel_row_new.childNodes){
-        if(tag.nodeName === "INPUT" && tag.className !== "remove-button")
+        if(tag.nodeName === "INPUT")
             tag.value = "";
     }
-    // parent_row.insertBefore(tel_row_new, div_row.nextSibling);
-    parent_row.appendChild(tel_row_new);
+
+    // Вставляем объект в конец
+    // к родителю - блоку, содержащий все номера
+
+    let parent_div = document.querySelector(".rows-flex");
+    parent_div.appendChild(tel_row_new);
+
+
 
     let tels = document.querySelectorAll('.tels');
 
     outer:for(let i = 0; i < tels.length; i++){
+        // Переменная для связи LABEL & INPUT [TYPE=RADIO]
         let name_id = "main_" + i;
-        let rm_id = "rm_" + i;
 
         for(let tag of tels[i].childNodes) {
-            if(tag.className === "remove-button"){
-                tag.id = rm_id;
+
+            if(tag && tag.className === "remove-button"){
                 tag.onclick = delTelRow;
             }
+
             else if (tag.className === 'main'){
                 tag.htmlFor = name_id;
             }
@@ -80,16 +88,16 @@ addTelNum = function() {
                 continue outer;
             }
         }
-        let rm_btn = document.createElement("INPUT");
-        rm_btn.type = "button";
+
+        let rm_btn = document.createElement("SPAN");
         rm_btn.onclick = delTelRow;
         rm_btn.className = "remove-button";
-        rm_btn.id = rm_id;
-        rm_btn.value = "X";
+        rm_btn.innerText = "X";
+        tels[i].prepend(rm_btn);
 
         let radio = document.createElement("INPUT");
         radio.type = "radio";
-        radio.name = "radio";
+        radio.name = "ismain";
         radio.id = name_id;
 
         let lab_rad = document.createElement("LABEL");
@@ -97,7 +105,7 @@ addTelNum = function() {
         lab_rad.className = "main";
         lab_rad.htmlFor = name_id;
 
-        tels[i].prepend(rm_btn);
+
         tels[i].appendChild(lab_rad);
         tels[i].appendChild(radio);
     }

@@ -26,7 +26,7 @@
     height: 300px;
     border-radius: 5px;
 }
-.contact-form label{
+.contact-form *{
     font-family: 'Lato', sans-serif;
 }
 
@@ -45,11 +45,16 @@
     background: rgb(199, 38, 12);
     box-shadow: 0 -3px rgb(159, 36, 12) inset;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .rows-flex .tels{
     margin-top: 10px;
 }
+.rows-flex .tels .main{
+    cursor: pointer;
+}
+
 .contact-form .columns-flex{
     display: flex;
     flex-direction: row;
